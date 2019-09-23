@@ -1,5 +1,5 @@
 {
-  "name": "react-typescript-boilerplate",
+  "name": "ttt-web",
   "version": "1.0.0",
   "main": "public/index.html",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "start": "run-p build:watch test:watch",
     "build": "rollup -c --prod",
     "lint": "yarn lint:code .",
-    "lint:code": "eslint --ext .tsx,.ts",
+    "lint:code": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "yarn lint:code --fix",
     "hooks:pre-push": "yarn lint && yarn test",
     "hooks:pre-commit": "lint-staged",
@@ -28,12 +28,11 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iraycd/react-typescript-boilerplate.git"
+    "url": "git+https://github.com/iraycd/ttt-web.git"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn lint:fix",
-      "yarn test",
       "git add"
     ]
   },
@@ -92,7 +91,9 @@
   "dependencies": {
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "^4.1.19",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0"
   }
 }

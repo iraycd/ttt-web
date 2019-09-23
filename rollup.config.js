@@ -1,14 +1,14 @@
 import babel from "rollup-plugin-babel";
-import replace from 'rollup-plugin-replace';
+import replace from "rollup-plugin-replace";
 import commonjs from "rollup-plugin-commonjs";
 import nodeResolve from "rollup-plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { sizeSnapshot } from "rollup-plugin-size-snapshot";
 import sourcemaps from "rollup-plugin-sourcemaps";
 import typescript from "rollup-plugin-typescript2";
-import globals from 'rollup-plugin-node-globals';
-import serve from 'rollup-plugin-serve';
-import livereload from 'rollup-plugin-livereload';
+import globals from "rollup-plugin-node-globals";
+import serve from "rollup-plugin-serve";
+import livereload from "rollup-plugin-livereload";
 import clear from "rollup-plugin-clear";
 
 import pkg from "./package.json";
@@ -21,12 +21,11 @@ const external = Object.keys(pkg.peerDependencies || {});
  */
 const outputDir = "./public/dist/";
 
-function createPlugins({
-  useSizeSnapshot,
-  prod
-} = {
-  useSizeSnapshot: false,
-}) {
+function createPlugins(
+  { useSizeSnapshot, prod } = {
+    useSizeSnapshot: false
+  }
+) {
   const plugins = [
     clear({
       targets: [outputDir],
@@ -38,30 +37,35 @@ function createPlugins({
       exclude: "node_modules/**"
     }),
     commonjs({
-      include: [
-        'node_modules/**'
-      ],
-      exclude: [
-        'node_modules/process-es6/**'
-      ],
+      include: ["node_modules/**"],
+      exclude: ["node_modules/process-es6/**"],
       namedExports: {
-        'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement'],
-        'node_modules/react-dom/index.js': ['render']
+        "node_modules/react/index.js": [
+          "cloneElement",
+          "createContext",
+          "Component",
+          "createElement"
+        ],
+        "node_modules/react-dom/index.js": ["render", "hydrate"],
+        "node_modules/react-is/index.js": [
+          "isElement",
+          "isValidElementType",
+          "ForwardRef"
+        ]
       }
     }),
     replace({
-      ENVIRONMENT: JSON.stringify('production')
+      ENVIRONMENT: JSON.stringify("production")
     }),
     globals(),
     typescript(),
     sourcemaps(),
     serve({
       open: true,
-      contentBase: 'public',
-      port: process.env.PORT || 3000,
+      contentBase: "public",
+      port: process.env.PORT || 3000
     })
   ];
-  !prod && plugins.push(livereload('public'));
   useSizeSnapshot && plugins.push(sizeSnapshot());
   return plugins;
 }
@@ -70,8 +74,8 @@ export default [
   {
     input: input,
     output: {
-      file: './public/dist/index.js',
-      format: "es",
+      file: "./public/dist/index.js",
+      format: "umd",
       banner: "/* eslint-disable */",
       sourcemap: true
     },
@@ -79,6 +83,7 @@ export default [
       clearScreen: false
     },
     external: external,
-    plugins: createPlugins(),
+    globals: { "styled-components": "styled" },
+    plugins: createPlugins()
   }
 ];
