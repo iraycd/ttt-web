@@ -9,21 +9,21 @@
   "scripts": {
     "start": "run-p build:watch test:watch",
     "build": "rollup -c --prod",
-    "lint": "yarn lint:code .",
+    "lint": "yarn lint:code",
     "lint:code": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "yarn lint:code --fix",
     "hooks:pre-push": "yarn lint && yarn test",
     "hooks:pre-commit": "lint-staged",
     "build:watch": "rollup -cw",
     "audit": "audit-ci -l",
-    "test": "run-s lint test:unit testci",
+    "test": "run-s lint test:coverage testci",
     "testci": "start-server-and-test serve http://localhost:3000 test:e2e",
     "serve": "serve -l 3000 public/",
     "test:unit": "jest",
     "test:e2e": "cypress run",
     "cypress": "cypress open",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage"
+    "test:coverage": "jest --coverage"
   },
   "private": true,
   "repository": {
@@ -94,6 +94,7 @@
     "@types/styled-components": "^4.1.19",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "redux": "^4.0.4",
     "styled-components": "^4.4.0"
   }
 }

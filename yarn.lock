@@ -1781,7 +1781,7 @@ cacache@^12.0.0, cacache@^12.0.2, cacache@^12.0.3:
     lru-cache "^5.1.1"
     mississippi "^3.0.0"
     mkdirp "^0.5.1"
-    move-concurrently "^1.0.1"
+    boardMove-concurrently "^1.0.1"
     promise-inflight "^1.0.1"
     rimraf "^2.6.3"
     ssri "^6.0.1"
@@ -5828,9 +5828,9 @@ moment@2.24.0:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
-move-concurrently@^1.0.1:
+boardMove-concurrently@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
+  resolved "https://registry.yarnpkg.com/boardMove-concurrently/-/boardMove-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
   dependencies:
     aproba "^1.1.1"
     copy-concurrently "^1.0.0"
@@ -6030,7 +6030,7 @@ normalize-path@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
   dependencies:
-    remove-trailing-separator "^1.0.1"
+    reboardMove-trailing-separator "^1.0.1"
 
 normalize-path@^3.0.0:
   version "3.0.0"
@@ -6215,7 +6215,7 @@ npm@^6.10.3:
     meant "~1.0.1"
     mississippi "^3.0.0"
     mkdirp "~0.5.1"
-    move-concurrently "^1.0.1"
+    boardMove-concurrently "^1.0.1"
     node-gyp "^5.0.3"
     nopt "~4.0.1"
     normalize-package-data "^2.5.0"
@@ -7258,6 +7258,14 @@ redeyed@~2.1.0:
   dependencies:
     esprima "~4.0.0"
 
+redux@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  integrity sha512-vKv4WdiJxOWKxK0yRoaK3Y4pxxB0ilzVx6dszU2W8wLxlb2yikRph4iV/ymtdJ6ZxpBLFbyrxklnT5yBbQSl3Q==
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
+
 regenerator-runtime@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
@@ -7313,9 +7321,9 @@ registry-url@3.1.0, registry-url@^3.0.3:
   dependencies:
     rc "^1.0.1"
 
-remove-trailing-separator@^1.0.1:
+reboardMove-trailing-separator@^1.0.1:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
+  resolved "https://registry.yarnpkg.com/reboardMove-trailing-separator/-/reboardMove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
 repeat-element@^1.1.2:
   version "1.1.3"
@@ -8390,7 +8398,7 @@ symbol-observable@1.0.1:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
   integrity sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
 
-symbol-observable@^1.1.0:
+symbol-observable@^1.1.0, symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
