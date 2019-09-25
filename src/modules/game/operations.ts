@@ -3,7 +3,9 @@ import { hasWon, isDraw } from "./helper";
 import { Gamer, Board } from "./types";
 import { Dispatch } from "redux";
 
-const checkWinner = (board: Board, gamer: Gamer) => (dispatch: Dispatch) => {
+const checkWinner = (board: Board, gamer: Gamer) => (
+  dispatch: Dispatch
+): boolean => {
   let hasWinner = true;
   if (hasWon(board, gamer)) {
     dispatch(winner(gamer));
@@ -17,9 +19,9 @@ const checkWinner = (board: Board, gamer: Gamer) => (dispatch: Dispatch) => {
   return hasWinner;
 };
 
-const playTurn = (gamer: Gamer, row: number, col: number) => (
+const gameTurn = (gamer: Gamer, row: number, col: number) => (
   dispatch: Dispatch
-) => {
+): void => {
   let nextGamer: Gamer;
 
   switch (gamer) {
@@ -36,4 +38,4 @@ const playTurn = (gamer: Gamer, row: number, col: number) => (
   dispatch(switchGamer(nextGamer));
 };
 
-export { newGame, checkWinner, playTurn };
+export { newGame, checkWinner, gameTurn };

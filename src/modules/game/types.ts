@@ -5,7 +5,7 @@ export const GAMER = "GAMER";
 export const WINNER = "WINNER";
 
 export type Gamer = 0 | 1 | 2;
-export type Board = Array<Array<0 | 1 | 2>>;
+export type Board = Array<Array<number>>;
 
 export interface Move {
   gamer: Gamer;

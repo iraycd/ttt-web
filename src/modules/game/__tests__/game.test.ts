@@ -150,7 +150,7 @@ describe("Game Duck", () => {
   });
 
   describe("Operations", () => {
-    const { checkWinner, playTurn } = operations;
+    const { checkWinner, gameTurn } = operations;
 
     it("Dispatch a winner", () => {
       const dispatch = jest.fn();
@@ -205,7 +205,7 @@ describe("Game Duck", () => {
       const move1 = actions.makeMove(gamer1, row, col);
       const switch1 = actions.switchGamer(2);
 
-      playTurn(gamer1, row, col)(dispatch);
+      gameTurn(gamer1, row, col)(dispatch);
 
       expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch.mock.calls[0][0]).toEqual(move1);
@@ -218,7 +218,7 @@ describe("Game Duck", () => {
       const move2 = actions.makeMove(gamer2, row, col);
       const switch2 = actions.switchGamer(1);
 
-      playTurn(gamer2, row, col)(dispatch);
+      gameTurn(gamer2, row, col)(dispatch);
 
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(dispatch.mock.calls[2][0]).toEqual(move2);

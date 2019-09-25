@@ -43,14 +43,22 @@ function createPlugins(
         "node_modules/react/index.js": [
           "cloneElement",
           "createContext",
+          "createRef",
           "Component",
-          "createElement"
+          "createElement",
+          "useMemo",
+          "useEffect",
+          "useLayoutEffect",
+          "useContext",
+          "useReducer",
+          "useRef"
         ],
-        "node_modules/react-dom/index.js": ["render", "hydrate"],
+        "node_modules/react-dom/index.js": ["render", "hydrate","unstable_batchedUpdates"],
         "node_modules/react-is/index.js": [
           "isElement",
           "isValidElementType",
-          "ForwardRef"
+          "ForwardRef",
+          "isContextConsumer"
         ]
       }
     }),

@@ -55,7 +55,10 @@ const winnerReducer = (state = -1, action: WinnerActionTypes) => {
 };
 
 export type GamerActionTypes = types.ChangeGamerAction | types.NewGameAction;
-const gamerReducer = (state = 1, action: GamerActionTypes) => {
+const gamerReducer = (
+  state: types.Gamer = 1,
+  action: GamerActionTypes
+): number => {
   switch (action.type) {
     case types.GAMER:
       return action.payload;
